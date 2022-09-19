@@ -28,6 +28,7 @@ int check_cycle(listint_t *list)
 		if (second->next->n == current->n)
 			return (1);
 		if (third)
+		{
 			if (third->next->n == current->n || third->next->n == second->n)
 			{
 				loop = 1;
