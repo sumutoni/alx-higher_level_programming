@@ -21,11 +21,6 @@ listint_t *insert_node(listint_t **head, int number)
 		*head = node;
 		return (node);
 	}
-	if ((*head)->n <= number && (*head)->next == NULL)
-	{
-		(*head)->next = node;
-		return (node);
-	}
 	if ((*head)->n > number)
 	{
 		node->next = *head;
