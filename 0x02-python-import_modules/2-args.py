@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import sys
-if __name__ = "__main__":
+if __name__ == "__main__":
     lg = len(argv[1:])
     if lg == 0:
         print("{:d} arguments.".format(lg))
