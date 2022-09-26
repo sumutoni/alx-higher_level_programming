@@ -9,6 +9,8 @@ def append_0(tup=()):
         tup_l.append(0)
         tup = tuple(tup_l)
     return tup
+
+
 def add_tuple(tuple_a=(), tuple_b=()):
     tup = []
     tup_t = ()
