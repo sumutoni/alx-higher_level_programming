@@ -32,7 +32,7 @@ int pal_even(int *value, int size)
 {
 	int i, j;
 
-	for (i = 0, j = size - 1; i < size / 2, j >= size / 2; i++, j--)
+	for (i = 0, j = size - 1; i < size / 2 && j >= size / 2; i++, j--)
 	{
 		if (value[i] != value[j])
 		{
@@ -54,7 +54,7 @@ int pal_odd(int *value, int size)
 {
 	int i, j;
 
-	for (i = 0, j = size - 1; i <= (size / 2) - 1, j >= size / 2;
+	for (i = 0, j = size - 1; i <= (size / 2) - 1 && j >= size / 2;
 		i++, j--)
 	{
 		if (value[i] != value[j])
