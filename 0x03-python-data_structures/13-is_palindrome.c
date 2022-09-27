@@ -82,7 +82,7 @@ int is_palindrome(listint_t **head)
 	if (!head || *head == NULL)
 	{
 		free(value);
-		return (0);
+		return (1);
 	}
 	if (size == 0)
 	{
