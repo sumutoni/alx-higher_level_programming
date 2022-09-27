@@ -22,34 +22,22 @@ int len(listint_t *head)
 	return (count);
 }
 /**
- * pal_even - checks if list is palindrome with even elements
- * @head: head of list
+ * pal_even - checks if list is palindrome with even # of elements
+ * @value: array of integers
+ * @size: size of list
  *
  * Return: 1 if yes, 0 if not
  */
-int pal_even(listint_t *head)
+int pal_even(int *value, int size)
 {
-	listint_t *curr;
-	int idx = 0, *value, i;
+	int i, j;
 
-	value = malloc(sizeof(int));
-	curr = malloc(sizeof(listint_t *));
-	curr = head;
-	while (curr->next)
+	for (i = 0, j = size - 1; i < size / 2, j >= size / 2; i++, j--)
 	{
-		value[idx] = curr->n;
-		idx++;
-		if (idx == len(head) / 2)
-			break;
-		curr = curr->next;
-	}
-	for (i = (len(head) / 2) - 1; i >= 0; i--)
-	{
-		curr = curr->next;
-		if (curr)
+		if (value[i] != value[j])
 		{
-			if (curr->n != value[i])
-				return (0);
+			free(value);
+			return (0);
 		}
 	}
 	free(value);
@@ -57,35 +45,22 @@ int pal_even(listint_t *head)
 }
 /**
  * pal_odd - checks if list is odd with odd # of elements
- * @head: head of list
+ * @value: array of integers
+ * @size: size of list
  *
  * Return: 1 if yes, 0 if not
  */
-int pal_odd(listint_t *head)
+int pal_odd(int *value, int size)
 {
-	int *value, i, idx = 0;
-	listint_t *curr;
+	int i, j;
 
-	if (head->next == NULL)
-		return (1);
-	value = malloc(sizeof(int) * (len(head) / 2));
-	curr = malloc(sizeof(listint_t *));
-	curr = head;
-	while (curr->next)
+	for (i = 0, j = size - 1; i <= (size / 2) - 1, j >= size / 2;
+		i++, j--)
 	{
-		value[idx] = curr->n;
-		idx++;
-		if (idx == len(head) / 2)
-			break;
-		curr = curr->next;
-	}
-	for (i = (len(head) / 2) - 2; i >= 0; i--)
-	{
-		curr = curr->next;
-		if (curr)
+		if (value[i] != value[j])
 		{
-			if (curr->n != value[i])
-				return (0);
+			free(value);
+			return (0);
 		}
 	}
 	free(value);
@@ -99,10 +74,30 @@ int pal_odd(listint_t *head)
  */
 int is_palindrome(listint_t **head)
 {
+	int *value, i, j, size;
+	listint_t *cur;
 
+	size = len(*head);
+	value = malloc(sizeof(int) * size);
 	if (!head || *head == NULL)
+	{
+		free(value);
 		return (0);
-	if (len(*head) % 2 == 0)
-		return (pal_even(*head));
-	return (pal_odd(*head));
+	}
+	if (size == 0)
+	{
+		free(value);
+		return (1);
+	}
+	cur = *head;
+	i = 0;
+	while (cur && i < size)
+	{
+		value[i] = cur->n;
+		i++;
+		cur = cur->next;
+	}
+	if (size % 2 == 0)
+		return (pal_even(value, size));
+	return (pal_odd(value, size));
 }
