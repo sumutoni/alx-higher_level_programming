@@ -74,8 +74,7 @@ int pal_odd(int *value, int size)
  */
 int is_palindrome(listint_t **head)
 {
-	int *value, i, j, size;
-	listint_t *cur;
+	int *value, size;
 
 	size = len(*head);
 	value = malloc(sizeof(int) * size);
