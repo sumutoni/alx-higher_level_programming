@@ -23,7 +23,7 @@ def roman_to_int(roman_string):
                 pass
             result += sym.get(roman_string[i])
         else:
-            result += subtract(sym.get(roman_string[i + 1]),\
-                    sym.get(roman_string[i]))
+            result += subtract(sym.get(roman_string[i + 1]),
+                               sym.get(roman_string[i]))
             sub = True
     return result
