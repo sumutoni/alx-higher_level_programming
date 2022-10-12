@@ -27,10 +27,10 @@ class Square:
 
     def my_print(self):
         """prints in stdout the square with the character #"""
-        if size == 0:
+        if self.__size == 0:
             print()
             return
-        for i in range(0, __size):
-            for j in range(0, __size):
+        for i in range(0, self.__size):
+            for j in range(0, self.__size):
                 printf("#", end="")
             print()
