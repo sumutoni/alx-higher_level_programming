@@ -13,7 +13,7 @@ class Node:
 
     @property
     def data(self):
-        return data
+        return self.__data
 
     @data.setter
     def data(self, value):
@@ -22,11 +22,11 @@ class Node:
 
     @property
     def next_node(self):
-        return next_node
+        return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
-        if not isinstance(value, Node) or value is not None:
+        if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
 
 
@@ -50,7 +50,7 @@ class SinglyLinkedList:
                 self.__cur = Node(value, None)
                 self.__prev.next_node = self.__cur
                 return
-            if (self.cur.data > value):
+            if (self.__cur.data > value):
                 if (self.__cur == self.__head):
                     self.__prev = Node(value, self.__cur)
                     self.__head = self.__prev
@@ -61,6 +61,8 @@ class SinglyLinkedList:
     def __str__(self):
         """Method to print data of instance"""
         self.__cur = self.__head
+        res = ""
         while self.__cur is not None:
-            print("{:d}".format(self.__cur.data))
+            res += "{:d}\n".format(self.__cur.data)
             self.__cur = self.__cur.next_node
+        return res
