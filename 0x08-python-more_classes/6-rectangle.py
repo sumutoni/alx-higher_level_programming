@@ -11,7 +11,7 @@ class Rectangle:
         """ initialization method(constructor)"""
         self.width = width
         self.height = height
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     @property
     def height(self):
@@ -63,5 +63,5 @@ class Rectangle:
 
     def __del__(self):
         """prints message when instance is destroyed"""
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
