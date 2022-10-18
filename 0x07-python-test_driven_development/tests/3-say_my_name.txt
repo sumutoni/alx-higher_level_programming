@@ -1,0 +1,29 @@
+The ``3-say_my_name`` module
+=============================
+
+Using ``say_my_name``
+---------------------
+
+This text file is in reStructured Format.
+
+First import ``say_my_name`` from ``3-say_my_name`` module:
+	>>> import sys
+	>>> sys.path.append('../')
+	>>> say = __import__('3-say_my_name').say_my_name
+
+Now use it:
+	>>> say('John', 'Smith')
+	My name is John Smith
+	>>> say('Clara', 'Vanderbilt')
+	My name is Clara Vanderbilt
+
+Fails if one of the parameters is not an a string
+	>>> try:
+	... 	say(12, 'White')
+	... except Exception as e:
+	...	print(e)
+	first_name must be a string
+
+Works with one argument
+	>>> say('Bob')
+	My name is Bob 
