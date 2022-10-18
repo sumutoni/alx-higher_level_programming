@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 def text_indentation(text):
+    """prints a text and 2 new lines after ., ?, :"""
     if type(text) != str:
         raise TypeError("text must be a string")
     for ch in range(len(text)):
@@ -8,7 +9,7 @@ def text_indentation(text):
             print()
             print()
         if text[ch] == ' ' and (prev == '?' or prev == '.' or prev == ':'):
-                continue
+            continue
         else:
             print(text[ch], end="")
         prev = text[ch]

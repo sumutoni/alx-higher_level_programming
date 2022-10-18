@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 def matrix_divided(matrix, div):
+    """ Divides each element of matrix by div"""
     if type(div) != float and type(div) != int:
         raise TypeError("div must be a number")
     if div == 0:
@@ -11,8 +12,9 @@ def matrix_divided(matrix, div):
     for list in matrix:
         for i in list:
             if type(i) != float and type(i) != int:
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-    new_l=[]
+                raise TypeError("matrix must be a matrix
+                                (list of lists) of integers/floats")
+    new_l = []
     j = 0
     for list in matrix:
         new_l.append([])
