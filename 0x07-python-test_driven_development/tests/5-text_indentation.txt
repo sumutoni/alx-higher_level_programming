@@ -1,0 +1,34 @@
+The ``5-text_indentation`` module
+==================================
+
+Using ``text_indentation``
+-------------------------
+
+This text file is in reStructured Format.
+
+First import ``text_indentation`` from ``5-text_indetantion`` module:
+	>>> import sys
+	>>> sys.path.append('../')
+	>>> text = __import__('5-text_indentation').text_indentation
+
+Now use it:
+	>>> text('Hello there. How are you?')
+	Hello there.
+	<BLANKLINE>
+	How are you?
+	<BLANKLINE>
+	>>> text("My favorite fruits are: banana, mango, and apple. What about you?")
+	My favorite fruits are:
+	<BLANKLINE>
+	banana, mango, and apple.
+	<BLANKLINE>
+	What about you?
+	<BLANKLINE>
+
+Doesn't print if passed a non string
+	>>> try:
+	... 	text([1, 2, 4])
+	... except Exception as e:
+	...	print(e)
+	text must be a string
+
