@@ -1,0 +1,50 @@
+The ``4-print_square`` module
+==============================
+
+Using ``print_square``
+---------------------
+
+This text file is in reStructured Format.
+
+First import ``print_square`` from ``4-print_square`` module:
+	>>> import sys
+	>>> sys.path.append('../')
+	>>> print_s = __import__('4-print_square').print_square
+
+Now use it :
+	>>> print_s(4)
+	####
+	####
+	####
+	####
+	>>> print_s(2)
+	##
+	##
+	>>> print_s(6)
+	######
+	######
+	######
+	######
+	######
+	######
+
+It works with ints only
+	>>> try:
+	...	 print_s(4.5)
+	... except Exception as e:
+	... 	print(e)
+	size must be an integer
+
+size has to be >= 0
+	>>> try:
+	...	print_s(-1)
+	... except Exception as e:
+	...	print(e)
+	size must be >= 0
+
+Strings are not accepted
+	>>> try:
+	...	print_s('5')
+	... except Exception as e:
+	...	print(e)
+	size must be an integer
