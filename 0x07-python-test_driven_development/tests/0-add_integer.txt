@@ -7,23 +7,27 @@ using ``add_integer``
 This is a text file in reStructured format.
 
 First import ``add_integer`` from ``0-add_integer`` module:
-
-	>>> add_int = __import__('0-add_integer).add_integer
+	>>> import sys
+	>>> sys.path.append('../')
+	>>> add_int = __import__('0-add_integer').add_integer
 
 Now use it:
 
 	>>> add_int(2,3)
 	5
+
 Also works with ints and floats
 	>>> add_int(10, 100.3)
-	10
+	110
 	>>> add_int(50.5, 10)
 	60
+
 Even with both floats, first cast floats to ints
 	>>> add_int(5.16, 3.5)
 	8
 	>>> add_int(4.5, 20.8)
 	24
+
 if one of the arguments is neither a float or int
 	>>> def test(func, values):
 	...	for t in values:
@@ -36,3 +40,9 @@ if one of the arguments is neither a float or int
 	a must be an integer
 	b must be an integer
 	a must be an integer
+
+Works even one parameter is passed
+	>>> add_int(2)
+	100
+	>>> add_int(4.3)
+	102
