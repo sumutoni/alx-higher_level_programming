@@ -39,3 +39,11 @@ It should not raise exception if value is integer
 	>>> b = bg()
 	>>> b.integer_validator("y", 12)
 	>>> b.integer_validator("z", 20)
+
+Test area
+	>>> b = bg()
+	>>> try:
+	...	b.area()
+	... except Exception as e:
+	...	print(e)
+	area() is not implemented
