@@ -6,13 +6,11 @@ Using ``BaseGeometry''
 
 This file is in reStructured Format.
 
-First import ``	BaseGeometry`` from ``7-base_geometry`` module:
-	>>> import sys
-	>>> sys.path.append('../')
-	>>> bg = __import__('7-base_geometry').BaseGeometry
+First import ``BaseGeometry`` from ``7-base_geometry`` module:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 Now use it:
-	>>> b = bg()
+	>>> b = BaseGeometry()
 	>>> try:
 	... 	b.integer_validator("side", "12")
 	... except Exception as e:
@@ -20,7 +18,7 @@ Now use it:
 	side must be an integer
 
 Test to see if it raises exception with 0
-	>>> b = bg()
+	>>> b = BaseGeometry()
 	>>> try:
 	... 	b.integer_validator("x", 0)	
 	... except Exception as e:
@@ -28,7 +26,7 @@ Test to see if it raises exception with 0
 	x must be greater than 0
 
 It should raise exception if value is less than 0
-	>>> b = bg()
+	>>> b = BaseGeometry()
 	>>> try:
 	...	b.integer_validator("length", -56)
 	... except Exception as e:
@@ -36,12 +34,12 @@ It should raise exception if value is less than 0
 	length must be greater than 0
 
 It should not raise exception if value is integer
-	>>> b = bg()
+	>>> b = BaseGeometry()
 	>>> b.integer_validator("y", 12)
 	>>> b.integer_validator("z", 20)
 
 Test area
-	>>> b = bg()
+	>>> b = BaseGeometry()
 	>>> try:
 	...	b.area()
 	... except Exception as e:
