@@ -1,0 +1,26 @@
+The ``1-my_list`` module
+==========================
+
+Using ``MyList``
+----------------------
+
+This file is reStructured text Format.
+
+First import ``MyList`` from ``1-my_list`` module:
+	>>> import sys
+	>>> sys.path.append('../')
+	>>> MyList = __import__('1-my_list').MyList
+
+Now Use it:
+	>>> myl = MyList()
+	>>> myl.append(1)
+	>>> myl.append(4)
+	>>> myl.append(5)
+	>>> myl.append(9)
+	>>> myl.append(7)
+	>>> print(myl)
+	[1, 4, 5, 9, 7]
+	>>> myl.print_sorted()
+	[1, 4, 5, 7, 9]
+	>>> print(myl)
+	[1, 4, 5, 9, 7]
