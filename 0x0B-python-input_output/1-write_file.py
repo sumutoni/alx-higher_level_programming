@@ -4,4 +4,5 @@
 
 def write_file(filename="", text=""):
     with open(filename, "w", encoding="utf-8") as fil:
-        return (fil.write(text))
+        characters = fil.write(text)
+    return characters
