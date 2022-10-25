@@ -8,3 +8,4 @@ def load_from_json_file(filename):
     with open(filename, "r", encoding="utf-8") as fil:
         line = fil.readline()
     obj = json.load(line)
+    return obj
