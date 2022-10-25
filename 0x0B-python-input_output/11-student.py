@@ -31,4 +31,3 @@ class Student:
         """replaces all attaributes of instance"""
         for obj in json:
             self.__dict__[obj] = json[obj]
-
