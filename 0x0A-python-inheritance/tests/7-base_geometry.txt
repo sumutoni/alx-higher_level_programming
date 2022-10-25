@@ -69,8 +69,9 @@ Test with other types
 	...			print(e)
 
 List of tests
-	>>> test = [True, (3,), {"kill": "joy"}, 5.67, {0, 1}, None]
+	>>> test = [True, (3,), {"kill": "joy"}, 5.67, {0, 1}, [56,89], None]
 	>>> test_types(test)
+	size must be an integer
 	size must be an integer
 	size must be an integer
 	size must be an integer
