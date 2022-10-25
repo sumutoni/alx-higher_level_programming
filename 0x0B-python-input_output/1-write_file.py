@@ -3,6 +3,7 @@
 
 
 def write_file(filename="", text=""):
+    """ write to file and return characters written"""
     with open(filename, "w", encoding="utf-8") as fil:
         characters = fil.write(text)
     return characters
