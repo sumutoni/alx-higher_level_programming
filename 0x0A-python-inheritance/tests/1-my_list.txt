@@ -24,3 +24,24 @@ Now Use it:
 	[1, 4, 5, 7, 9]
 	>>> print(myl)
 	[1, 4, 5, 9, 7]
+
+Test using negative numbers
+	>>> ml = MyList()
+	>>> ml.append(-4)
+	>>> ml.append(-56)
+	>>> ml.append(0)
+	>>> ml.append(90)
+	>>> ml.append(-28)
+	>>> print(ml)
+	[-4, -56, 0, 90, -28]
+	>>> ml.print_sorted()
+	[-56, -28, -4, 0, 90]
+	>>> print(ml)
+	[-4, -56, 0, 90, -28]
+
+Test with empty list
+	>>> m = MyList()
+	>>> print(m)
+	[]
+	>>> m.print_sorted()
+	[]
