@@ -11,8 +11,8 @@ def pascal_triangle(n):
         new = []
         prev = trgle[-1]
         new.append(prev[0])
-        for l in range(len(prev) - 1):
-            new.append(prev[l] + prev[l + 1])
+        for li in range(len(prev) - 1):
+            new.append(prev[li] + prev[li + 1])
         new.append(prev[-1])
         trgle.append(new)
     return (trgle)
