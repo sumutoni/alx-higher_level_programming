@@ -7,7 +7,7 @@ def pascal_triangle(n):
         pascal's triangle"""
     trgle = []
     trgle.append([1])
-    for i in range(n):
+    for i in range(n - 1):
         new = []
         prev = trgle[-1]
         new.append(prev[0])
