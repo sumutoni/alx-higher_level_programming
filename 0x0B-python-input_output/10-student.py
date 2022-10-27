@@ -22,7 +22,7 @@ class Student:
                     return copy
             for item in attrs:
                 for obj in copy:
-                    if item == copy:
+                    if item == obj:
                         new_dict[obj] = copy[obj]
             return new_dict
         return copy
