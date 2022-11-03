@@ -23,18 +23,11 @@ class Square(Rectangle):
 
     def area(self):
         """calcluates area"""
-        return self.__height * self.__width
+        return super().area()
 
     def display(self):
         """displays rectangle using # character"""
-        for li in range(self.__y):
-            print()
-        for i in range(self.__height):
-            for s in range(self.__x):
-                print(" ", end='')
-            for j in range(self.__width):
-                print("#", end='')
-            print()
+        super().display()
 
     def update(self, *args):
         """assigns arguments to each attribute"""
