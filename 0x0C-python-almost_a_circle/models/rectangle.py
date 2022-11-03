@@ -83,4 +83,6 @@ class Rectangle(Base):
 
     def __str__(self):
         """print rectangle to stdout"""
-        print("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id, self.__x, self.__y, self.width, self.__height))
+        print("[Rectangle] ({:d}) {:d}/{:d}\
+                - {:d}/{:d}".format(self.id, self.__x, self.__y,
+                                    self.__width, self.__height))
