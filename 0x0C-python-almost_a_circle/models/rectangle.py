@@ -85,6 +85,10 @@ class Rectangle(Base):
                 print("#", end='')
             print()
 
+    def update(self, *args):
+        """assigns arguments to each attribute"""
+        (self.id, self.__width, self.__height, self.__x, self.__y) = args
+
     def __str__(self):
         """print rectangle to stdout"""
         str1 = ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format
