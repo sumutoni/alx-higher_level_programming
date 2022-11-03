@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Rectangle class inheriting from Base class"""
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -83,7 +83,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """print rectangle to stdout"""
-        str1 = ("[Rectangle] ({:d}) {:d}/{:d}\
-                - {:d}/{:d}".format(self.id, self.__x, self.__y,
-                                    self.__width, self.__height))
+        str1 = ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format
+                (self.id, self.__x, self.__y,
+                    self.__width, self.__height))
         return str1
