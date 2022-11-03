@@ -26,7 +26,7 @@ class Square(Rectangle):
         return super().area()
 
     def display(self):
-        """displays rectangle using # character"""
+        """displays square using # character"""
         super().display()
 
     def update(self, *args):
@@ -34,8 +34,5 @@ class Square(Rectangle):
         (self.id, self.__width, self.__height, self.__x, self.__y) = args
 
     def __str__(self):
-        """print rectangle to stdout"""
-        str1 = ("[Square] ({:d}) {:d}/{:d} - {:d}".format
-                (self.id, self.__x, self.__y,
-                    self.__width))
-        return str1
+        """print square to stdout"""
+        return super().__str__()
