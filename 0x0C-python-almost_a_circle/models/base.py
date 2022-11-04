@@ -32,6 +32,6 @@ class Base:
             else:
                 list_dict = []
                 for item in list_objs:
-                    list_dict = [item.to_dictionary()]
+                    list_dict.append(item.to_dictionary())
                 json_str = cls.to_json_string(list_dict)
                 fil.write(json_str)
