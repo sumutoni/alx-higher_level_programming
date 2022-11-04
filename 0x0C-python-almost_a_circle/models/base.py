@@ -61,7 +61,7 @@ class Base:
         try:
             with open(cls.__name__ + ".json", "r", encoding="utf-8") as fil:
                 json_str = fil.read()
-                json_list = cls.form_json_string(json_str)
+                json_list = cls.from_json_string(json_str)
                 instances = []
                 for item in json_list:
                     instances.append(cls.create(**item))
