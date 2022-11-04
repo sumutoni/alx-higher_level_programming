@@ -30,6 +30,8 @@ class Base:
             if list_objs is None:
                 json.dump([], fil)
             else:
+                list_dict = []
                 for item in list_objs:
                     list_dict = [item.to_dictionary()]
-                json.dump(list_dict, fil)
+                json_str = cls.to_json_string(list_dict)
+                fil.write(json_str)
