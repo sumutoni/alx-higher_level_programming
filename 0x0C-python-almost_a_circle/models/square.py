@@ -18,8 +18,8 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """setter method"""
-        super().width(value)
-        super().height(value)
+        Rectangle.width.fset(self, value)
+        Rectangle.height.fset(self, value)
 
     def area(self):
         """calcluates area"""
