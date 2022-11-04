@@ -35,3 +35,10 @@ class Base:
                     list_dict.append(item.to_dictionary())
                 json_str = cls.to_json_string(list_dict)
                 fil.write(json_str)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns list representation of json_string"""
+        if json_string is None:
+            return []
+        return json.load(json_string)
