@@ -66,5 +66,5 @@ class Base:
                 for item in json_list:
                     instances.append(cls.create(**item))
                 return instances
-        except:
+        except Exception:
             return []
