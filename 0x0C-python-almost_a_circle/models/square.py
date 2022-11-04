@@ -31,7 +31,19 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """assigns arguments to each attribute"""
-        super().update(args, kwargs)
+        new_arg = [self.id, self.__size, self.__size, self.__x, self.__y]
+        if args is not None and len(args) > 0:
+            for i, j in range(len(args)):
+                if i == 1:
+                    new_arg[j] = args[i]
+                    j += 1
+                new_args[j] = args[i]
+            super().update(new_arg, kwargs)
+        else:
+            if 'size' in kwargs.keys():
+                dict = {'width': kwargs[size], 'height': kwargs[size]}
+                kwargs.update(dict)
+                super().update(args, kwargs)
 
     def __str__(self):
         """print square to stdout"""
