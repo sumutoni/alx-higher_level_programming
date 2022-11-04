@@ -52,3 +52,12 @@ class Square(Rectangle):
     def __str__(self):
         """print square to stdout"""
         return super().__str__()
+
+    def to_dictionary(self):
+        """returns dictionary representation of square"""
+        dictn = super().to_dictionary()
+        dictn.pop('width')
+        dictn.pop('height')
+        size = {'size': self.size}
+        dictn.update(size)
+        return dictn
