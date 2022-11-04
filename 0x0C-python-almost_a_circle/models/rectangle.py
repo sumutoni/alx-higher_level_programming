@@ -87,7 +87,10 @@ class Rectangle(Base):
 
     def update(self, *args):
         """assigns arguments to each attribute"""
-        (self.id, self.__width, self.__height, self.__x, self.__y) = args
+        new_arg = [self.id, self.__width, self.__height, self.__x, self.__y]
+        for i in range(len(args)):
+            new_arg[i] = args[i]
+        (self.id, self.__width, self.__height, self.__x, self.__y) = new_arg
 
     def __str__(self):
         """print rectangle to stdout"""
@@ -95,10 +98,5 @@ class Rectangle(Base):
                 (type(self).__name__, self.id, self.__x, self.__y,
                     self.__width, self.__height))
         if type(self).__name__ == 'Rectangle':
-            str1 = str1 + "\{:d}".format(self.__height)
+            str1 = str1 + "/{:d}".format(self.__height)
         return str1
-
-if __name__ == '__main__':
-    rec = Rectangle(12, 4, 3, 2)
-    rec.update(13)
-    print(rec.__str__())
