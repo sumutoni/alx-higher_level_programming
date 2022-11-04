@@ -29,9 +29,9 @@ class Square(Rectangle):
         """displays square using # character"""
         super().display()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """assigns arguments to each attribute"""
-        (self.id, self.__width, self.__height, self.__x, self.__y) = args
+        super().update(args, kwargs)
 
     def __str__(self):
         """print square to stdout"""
