@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Rectangle class inheriting from Base class"""
-from models.base import Base
+from  models.base import Base
 
 
 class Rectangle(Base):
@@ -106,3 +106,9 @@ class Rectangle(Base):
         if type(self).__name__ == 'Rectangle':
             str1 = str1 + "/{:d}".format(self.__height)
         return str1
+
+    def to_dictionary(self):
+        new_dict = {'id': self.id, 'width': self.__width,
+                    'height': self.__height, 'x': self.__x,
+                    'y': self.__y}
+        return new_dict
