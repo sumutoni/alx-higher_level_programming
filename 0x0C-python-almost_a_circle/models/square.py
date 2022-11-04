@@ -41,7 +41,7 @@ class Square(Rectangle):
             super().update(new_arg, kwargs)
         else:
             if 'size' in kwargs.keys():
-                dict = {'width': kwargs[size], 'height': kwargs[size]}
+                dict = {'width': kwargs['size'], 'height': kwargs['size']}
                 kwargs.update(dict)
                 super().update(args, kwargs)
 
