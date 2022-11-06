@@ -104,5 +104,45 @@ class TestRectangle(unittest.TestCase):
          self.assertEqual(rec.to_dictionary(), {'id': 1, 'width': 2,
                                                 'height': 6, 'x': 8, 'y': 9})
 
+     def test_create(self):
+         dict_crea = {'id': 21}
+         rec = Rectangle.create(**dict_crea)
+         self.assertEqual(type(rec), Rectangle)
+         self.asserEqual(rec.id, 21)
+
+     def test_create(self):
+         dict_crea = {'id': 21, 'width': 4}
+         rec = Rectangle.create(**dict_crea)
+         self.assertEqual(type(rec), Rectangle)
+         self.asserEqual(rec.id, 21)
+         self.assertEqual(rec.width, 4)
+
+     def test_create(self):
+         dict_crea = {'id': 21, 'width': 4, 'height': 5}
+         rec = Rectangle.create(**dict_crea)
+         self.assertEqual(type(rec), Rectangle)
+         self.asserEqual(rec.id, 21)
+         self.assertEqual(rec.width, 4)
+         self.assertEqual(rec.heigh, 5)
+
+     def test_create(self):
+         dict_crea = {'id': 21, 'width': 4, 'height': 5, 'x': 3}
+         rec = Rectangle.create(**dict_crea)
+         self.assertEqual(type(rec), Rectangle)
+         self.asserEqual(rec.id, 21)
+         self.assertEqual(rec.width, 4)
+         self.assertEqual(rec.height, 5)
+         self.assertEqual(rec.x, 3)
+
+     def test_create(self):
+         dict_crea = {'id': 21, 'width': 4, 'height': 5, 'x': 3, 'y': 7}
+         rec = Rectangle.create(**dict_crea)
+         self.assertEqual(type(rec), Rectangle)
+         self.assertEqual(rec.id, 21)
+         self.assertEqual(rec.width, 4)
+         self.assertEqual(rec.height, 5)
+         self.assertEqual(rec.x, 3)
+         self.assertEqual(rec.y, 7)
+
 if __name__ == '__main__':
     unittest.main()
