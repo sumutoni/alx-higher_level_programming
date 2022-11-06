@@ -153,14 +153,14 @@ class TestRectangle(unittest.TestCase):
          with open(filename, "r", encoding="utf-8") as fil:
              self.assertEqual([], json.loads(fil.read()))
 
-     def test_save_to_file1(self):
+     def test_save_to_file2(self):
          obj = []
          Rectangle.save_to_file(obj)
          filename = 'Rectangle.json'
          with open(filename, "r", encoding="utf-8") as fil:
              self.assertEqual([], json.loads(fil.read()))
 
-     def test_save_to_file1(self):
+     def test_save_to_file3(self):
          obj = [Rectangle(1, 2), Rectangle(1, 5, 7, 7)]
          Rectangle.save_to_file(obj)
          filename = 'Rectangle.json'
@@ -173,7 +173,7 @@ class TestRectangle(unittest.TestCase):
         recs = Square.load_from_file()
         self.assertEqual([], recs)
 
-     def test_load_from_file1(self):
+     def test_load_from_file2(self):
          recs = Rectangle.load_from_file()
          for item in recs:
              self.assertEqual(type(item), Rectangle)
