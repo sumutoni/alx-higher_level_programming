@@ -2,6 +2,8 @@
 """unittest file for Base class"""
 import unittest
 import sys
+from io import StringIO
+from unittest.mock import patch, call
 sys.path.append('../..')
 from models.rectangle import Rectangle
 
@@ -83,5 +85,18 @@ class TestRectangle(unittest.TestCase):
          rec.update(*new)
          self.assertEqual(rec.__str__(), "[Rectangle] (5) 9/3 - 3/6")
 
+     def test_display(self):
+         rec = Rectangle(3, 2)
+         expected = '###\n###\n'
+         with patch('sys.stdout', new = StringIO()) as fake:
+             rec.display()
+             self.assertEqual(fake.getvalue(), expected)
+
+     def test_display1(self):
+         rec = Rectangle(1, 2, 2)
+         expected = '  #\n  #\n'
+         with patch('sys.stdout', new = StringIO()) as fake:
+             rec.display()
+             self.assertEqual(fake.getvalue(), expected)
 if __name__ == '__main__':
     unittest.main()
