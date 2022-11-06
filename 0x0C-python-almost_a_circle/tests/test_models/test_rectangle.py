@@ -98,5 +98,11 @@ class TestRectangle(unittest.TestCase):
          with patch('sys.stdout', new = StringIO()) as fake:
              rec.display()
              self.assertEqual(fake.getvalue(), expected)
+
+     def test_to_dictionary(self):
+         rec = Rectangle(2, 6, 8, 9, 1)
+         self.assertEqual(rec.to_dictionary(), {'id': 1, 'width': 2,
+                                                'height': 6, 'x': 8, 'y': 9})
+
 if __name__ == '__main__':
     unittest.main()
