@@ -55,7 +55,7 @@ class TestRectangle(unittest.TestCase):
 
      def test_valEr5(self):
          with self.assertRaises(ValueError):
-             self.r13 = Rectangle(-7, 9)
+             self.r13 = Rectangle(7, -9)
 
      def test_typeError(self):
          with self.assertRaises(TypeError):
