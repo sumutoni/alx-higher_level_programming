@@ -13,7 +13,7 @@ class TestRectangle(unittest.TestCase):
         self.r1 = Rectangle(1, 2)
         self.r2 = Rectangle(1, 2, 3)
         self.r3 = Rectangle(1, 2, 3, 4)
-
+        self.r = Rectangle(1, 2, 3, 4, 5)
 
      def tearDown(self):
          pass
@@ -22,11 +22,16 @@ class TestRectangle(unittest.TestCase):
          self.assertEqual(self.r1.width, 1)
          self.assertEqual(self.r2.width, 1)
          self.assertEqual(self.r3.width, 1)
+         self.assertEqual(self.r.width, 1)
+         seld.assertEqual(self.r.height, 2)
          self.assertEqual(self.r1.height, 2)
          self.assertEqual(self.r2.height, 2)
+         self.assertEqual(self.r.x, 3)
          self.assertEqual(self.r2.x, 3)
          self.assertEqual(self.r3.x, 3)
+         self.assertEqual(self.r.y, 4)
          self.assertEqual(self.r3.y, 4)
+         self.assertEqual(self.r.id, 5)
          with self.assertRaises(ValueError):
              self.r4 = Rectangle(0, 2)
              self.r5 = Rectangle(2, 0)
