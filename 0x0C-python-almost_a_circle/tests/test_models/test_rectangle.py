@@ -7,7 +7,7 @@ from io import StringIO
 from unittest.mock import patch, call
 sys.path.append('../..')
 from models.rectangle import Rectangle
-from models.square import Square
+from models.base import Base
 
 
 class TestRectangle(unittest.TestCase):
@@ -154,14 +154,12 @@ class TestRectangle(unittest.TestCase):
              self.assertEqual([], json.loads(fil.read()))
 
      def test_save_to_file2(self):
-         obj = []
          Rectangle.save_to_file([])
          filename = 'Rectangle.json'
          with open(filename, "r", encoding="utf-8") as fil:
              self.assertEqual([], json.loads(fil.read()))
 
      def test_save_to_file3(self):
-         obj = [Rectangle(1, 2), Rectangle(1, 5, 7, 7)]
          Rectangle.save_to_file([Rectangle(1, 2), Rectangle(1, 5, 7, 7)])
          filename = 'Rectangle.json'
          with open(filename, "r", encoding="utf-8") as fil:
@@ -170,7 +168,7 @@ class TestRectangle(unittest.TestCase):
                 self.assertEqual(type(item), dict)
 
      def test_load_from_file1(self):
-        recs = Square.load_from_file()
+        recs = Base.load_from_file()
         self.assertEqual([], recs)
 
      def test_load_from_file2(self):
