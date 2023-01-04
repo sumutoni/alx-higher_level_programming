@@ -9,8 +9,8 @@ if __name__ == "__main__":
                      passwd=sys.argv[2], db=sys.argv[3])
     curs = db.cursor()
     curs.execute("""SELECT name FROM cities LEFT JOIN
-                 (SELECT id As s_id WHERE name = %s) ON
-                 s_id = state_id ORDER BY id ASC;""", (sys.argv[4],))
+                 (SELECT id As s_id WHERE name = %s) As s ON
+                 s.s_id = state_id ORDER BY id ASC;""", (sys.argv[4],))
     for city in curs.fetchall():
         print(city)
     curs.close()
