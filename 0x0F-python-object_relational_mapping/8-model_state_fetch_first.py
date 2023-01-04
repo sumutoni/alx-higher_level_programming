@@ -7,8 +7,7 @@ import sys
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
-                           sys.argv[1], sys.argv[2], sys.argv[3]),
-                           pool_pre_ping=True)
+                           sys.argv[1], sys.argv[2], sys.argv[3]), echo=False)
     Base.metadata.create_all(engine)
     session = Session(engine)
     state = session.query(State).order_by(State.id).first()
