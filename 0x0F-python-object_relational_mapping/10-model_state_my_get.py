@@ -14,6 +14,6 @@ if __name__ == "__main__":
     session = Session()
     states = session.query(State).filter_by(name=''.format(sys.argv[4]))
     if states:
-        print(states)
+        print(states.id)
     else:
         print('Not found')
