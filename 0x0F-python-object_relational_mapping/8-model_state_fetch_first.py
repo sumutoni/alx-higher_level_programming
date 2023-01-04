@@ -15,4 +15,4 @@ if __name__ == "__main__":
     if state is Null:
         print('Nothing')
     else:
-        print(states[0].__str__())
+        print(state)
