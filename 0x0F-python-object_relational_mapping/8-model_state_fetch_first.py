@@ -12,7 +12,7 @@ if __name__ == "__main__":
     Base.metadata.create_al(engine)
     session = Session(engine)
     state = session.query(State).order_by(State.id).first()
-    if state is Null:
-        print('Nothing')
-    else:
+    if state:
         print(state)
+    else:
+        print('Nothing')
