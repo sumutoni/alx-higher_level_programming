@@ -12,4 +12,4 @@ if __name__ == "__main__":
     Base.metadata.create_al(engine)
     session = Session(engine)
     for state in session.query(State).order_by(State.id):
-        print(state.__str__())
+        print(state)
