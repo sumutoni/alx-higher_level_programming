@@ -8,13 +8,13 @@ if __name__ == "__main__":
     db = mdb.connect(host="localhost", port=3306, user=sys.argv[1],
                      passwd=sys.argv[2], db=sys.argv[3])
     curs = db.cursor()
-    curs.execute("""SELECT name FROM cities LEFT JOIN
+    curs.execute("""SELECT name FROM cities WHERE state_id IN
                  (SELECT states.id As s_id FROM states
-                 WHERE states.name = %s) As s ON
-                 s.s_id = state_id ORDER BY id ASC;""", (sys.argv[4],))
+                 WHERE states.name = %s) ORDER BY id
+                 ASC;""", (sys.argv[4],))
     for city in curs.fetchall():
         for c in city:
-            print(c)
+            print(c, end='')
         print(',')
     curs.close()
     db.close()
