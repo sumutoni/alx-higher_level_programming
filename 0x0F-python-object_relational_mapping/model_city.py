@@ -2,10 +2,11 @@
 """Class Definition of City"""
 
 import sys
-from model_state import Base
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String, ForeignKey
 
+Base = declarative_base()
 
 
 class City(Base):
