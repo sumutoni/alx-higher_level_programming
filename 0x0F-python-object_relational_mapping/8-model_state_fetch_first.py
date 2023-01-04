@@ -11,8 +11,8 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Base.metadata.create_al(engine)
     session = Session(engine)
-    states = session.query(State).order_by(State.id)
-    if len(states) == 0:
+    state = session.query(State).order_by(State.id).first()
+    if state is Null:
         print('Nothing')
     else:
         print(states[0].__str__())
