@@ -16,6 +16,6 @@ if __name__ == "__main__":
         State.name == sys.argv[4]).order_by(State.id).all()
     if states:
         for state in states:
-            print(state)
+            print(state[0])
     else:
         print('Not found')
