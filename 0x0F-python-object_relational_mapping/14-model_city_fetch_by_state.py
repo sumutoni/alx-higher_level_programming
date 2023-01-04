@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Retrieve all States using ORM"""
+"""Retrieve all Cities using ORM"""
 
 from model_state import Base, State
 from model_city import City
@@ -13,8 +13,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    i = 1
-    for state, city in session.query(State.name, City.name).filter(
-        City.state_id == State.id):
-        print('{}: ({:d}) {}'.format(state, i, city))
-        i += 1
+    for state, id, city in session.query(State.name, City.id, City.name).filter(
+        City.state_id == State.id).order_by(City.id):
+        print('{}: ({:d}) {}'.format(state, id, city)
