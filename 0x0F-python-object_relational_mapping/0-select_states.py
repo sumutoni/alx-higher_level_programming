@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+""" Import all states from database"""
+
 import MySQLdb as mdb
 import sys
-""" Import all states from a database"""
 
 if __name__ == "__main__":
     db = mdb.connect(host="localhost", port=3306, user=sys.argv[1],
