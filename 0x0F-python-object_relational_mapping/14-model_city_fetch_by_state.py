@@ -15,4 +15,4 @@ if __name__ == "__main__":
     session = Session()
     for state, id, city in session.query(State.name, City.id, City.name).filter(
         City.state_id == State.id).order_by(City.id):
-        print('{}: ({:d}) {}'.format(state, id, city)
+        print('{:s}: ({:d}) {:s}'.format(state, id, city)
