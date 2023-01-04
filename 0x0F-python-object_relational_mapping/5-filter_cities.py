@@ -12,9 +12,6 @@ if __name__ == "__main__":
                  (SELECT states.id As s_id FROM states
                  WHERE states.name = %s) ORDER BY id
                  ASC;""", (sys.argv[4],))
-    for city in curs.fetchall():
-        for c in city:
-            print(c, end='')
-        print(',')
+    print(", ".join(["{}".format(city[0]) for city in curs.fetchall()]))
     curs.close()
     db.close()
