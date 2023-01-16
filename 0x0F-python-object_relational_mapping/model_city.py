@@ -22,4 +22,5 @@ class City(Base):
 
     def __repr__(self):
         """object representation"""
-        return "City(id={}, state_id={}, name={})".format(self.id, self.state_id, self.name)
+        return "City(id={}, state_id={}, name={})".format(
+            self.id, self.state_id, self.name)
