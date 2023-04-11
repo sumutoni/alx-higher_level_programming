@@ -1,2 +1,2 @@
-# JavaScript - Warm up
-These are some introductory exercises on Javascript
+# JavaScript Warm up
+Introductory exercises in JavaScript
