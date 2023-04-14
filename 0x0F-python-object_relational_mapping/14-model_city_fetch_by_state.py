@@ -3,6 +3,7 @@
 
 from sqlalchemy import create_engine
 from model_state import Base, State
+from model_city import City
 from sqlalchemy.orm import sessionmaker
 import sys
 
