@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Script to print all states from database"""
 
-import sys
 import MySQLdb as mdb
+import sys
 
 
 if __name__ == "__main__":
