@@ -13,7 +13,7 @@ if __name__ == "__main__":
                      passwd=sys.argv[2], db=sys.argv[3])
     curs = db.cursor()
     state = sys.argv[4]
-    command = """SELECT states.name FROM
+    command = """SELECT cities.name FROM
                  (SELECT cities.name, states.name FROM cities
                  INNER JOIN states ON cities.state_id = states.id)
                  WHERE states.name LIKE BINARY '{}'
