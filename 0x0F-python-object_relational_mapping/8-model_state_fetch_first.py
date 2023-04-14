@@ -17,5 +17,5 @@ if __name__ == "__main__":
     if state:
         print(state)
     else:
-        print("")
+        print("Nothing")
     session.close()
