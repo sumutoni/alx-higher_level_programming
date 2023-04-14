@@ -19,6 +19,6 @@ if __name__ == "__main__":
                  ORDER BY cities.id ASC""".format(state)
     curs.execute(command)
     for city in curs.fetchall():
-        print(city)
+        print(", ".join(city[0]))
     curs.close()
     db.close()
