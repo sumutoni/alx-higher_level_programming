@@ -16,8 +16,7 @@ if __name__ == "__main__":
     command = """SELECT cities.name FROM
                  (SELECT cities.name, states.name FROM cities
                  INNER JOIN states ON cities.state_id = states.id)
-                 WHERE states.name LIKE BINARY '{}'
-                 ORDER BY cities.id ASC""".format(state)
+                 WHERE states.name LIKE BINARY '{}'""".format(state)
     curs.execute(command)
     for city in curs.fetchall():
         print(", ".join(city[0]))
