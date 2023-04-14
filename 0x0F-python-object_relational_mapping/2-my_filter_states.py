@@ -10,7 +10,7 @@ if __name__ == "__main__":
                      passwd=sys.argv[2], db=sys.argv[3])
     curs = db.cursor()
     state = sys.argv[4]
-    curs.execute("""SELECT * FROM states WHERE name = {}
+    curs.execute("""SELECT * FROM states WHERE name = '{}'
                  ORDER BY id ASC""".format(state))
     for st in curs.fetchall():
         print(st)
