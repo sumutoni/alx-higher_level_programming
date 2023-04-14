@@ -15,4 +15,4 @@ class State(Base):
 
     def __str__(self):
         """Method to print object"""
-        print("{}: {}".format(self.id, self.name))
+        return "{}: {}".format(self.id, self.name)
