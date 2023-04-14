@@ -15,7 +15,7 @@ if __name__ == "__main__":
     if ' ' in sys.argv[4]:
         state = sys.argv[4].split()[0] + " " + sys.argv[4].split()[1]
     else:
-        state = sys.argv[4].split()[0]        
+        state = sys.argv[4].split()[0]
     curs.execute("""SELECT * FROM states WHERE name LIKE BINARY '{}'
                  ORDER BY id ASC""".format(state))
     for st in curs.fetchall():
