@@ -19,6 +19,6 @@ if __name__ == "__main__":
                  WHERE states.name LIKE BINARY '{}'""".format(state)
     curs.execute(command)
     for city in curs.fetchall():
-        print(", ".join("{}".format(city)))
+        print(", ".join("{}".format(city[0])))
     curs.close()
     db.close()
