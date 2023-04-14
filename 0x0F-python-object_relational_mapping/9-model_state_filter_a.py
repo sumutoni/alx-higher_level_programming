@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script that prints the first  State object from database"""
+"""Script that prints State object containing 'a' from database"""
 
 from sqlalchemy import create_engine
 from model_state import Base, State
