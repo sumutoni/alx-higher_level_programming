@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script to print all states starting with 'N'"""
+"""Script to print all states matching passed argument"""
 
 import sys
 import MySQLdb as mdb
@@ -11,7 +11,7 @@ if __name__ == "__main__":
     curs = db.cursor()
     state = sys.argv[4]
     curs.execute("""SELECT * FROM states WHERE name = %s
-                 ORDER BY id ASC;""", state)
+                 ORDER BY id ASC""", (state,))
     for st in curs.fetchall():
         print(st)
     curs.close()
