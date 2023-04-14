@@ -19,6 +19,6 @@ if __name__ == "__main__":
                  WHERE states.name = '{}'""".format(state)
     curs.execute(command)
     for city in curs.fetchall():
-        print(", ".join(city[0]))
+        print(", ".join("{}".format(city[0])))
     curs.close()
     db.close()
