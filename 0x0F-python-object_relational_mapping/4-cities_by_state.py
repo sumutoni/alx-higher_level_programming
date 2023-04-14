@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Script to print all states matching passed argument
-and make sure it is safe from SQL injection
+Script to print all cities and their states
 """
 
 import sys
