@@ -13,12 +13,13 @@ if __name__ == "__main__":
                      passwd=sys.argv[2], db=sys.argv[3])
     curs = db.cursor()
     state = sys.argv[4]
-    command = """SELECT cities.name FROM
-                 (SELECT cities.name, states.name FROM cities
+    command = """SELECT city_name FROM
+                 (SELECT cities.name AS city_name, states.name AS state_name
+                 FROM cities
                  INNER JOIN states ON cities.state_id = states.id)
-                 WHERE states.name LIKE BINARY '{}'""".format(state)
+                 AS citystate
+                 WHERE state_name LIKE BINARY '{}'""".format(state)
     curs.execute(command)
-    for city in curs.fetchall():
-        print(", ".join("{}".format(city[0])))
+    print(", ".join(city[0] for city in curs.fetchall()))
     curs.close()
     db.close()
