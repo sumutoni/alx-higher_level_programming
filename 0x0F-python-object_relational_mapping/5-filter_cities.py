@@ -20,6 +20,6 @@ if __name__ == "__main__":
     curs.execute(command, (state,))
     cities = curs.fetchall()
     for city in cities:
-        print(", ".join("{}".format(city[1])))
+        print(", ".join("{}".format(city[0])))
     curs.close()
     db.close()
