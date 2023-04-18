@@ -16,8 +16,9 @@ if __name__ == "__main__":
     command = """SELECT cities.name FROM
                  (SELECT cities.name, states.name FROM cities
                  INNER JOIN states ON cities.state_id = states.id)
-                 WHERE states.name LIKE BINARY %s"""
-    curs.execute(command, (state,))
-    cities = curs.fetchall()
-    for city in cities:
-        print(", ".join("{}".format(city[1])))
+                 WHERE states.name LIKE BINARY '{}'""".format(state)
+    curs.execute(command)
+    for city in curs.fetchall():
+        print(", ".join("{}".format(city[0])))
+    curs.close()
+    db.close()
