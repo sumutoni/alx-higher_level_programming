@@ -18,7 +18,8 @@ if __name__ == "__main__":
                  INNER JOIN states ON cities.state_id = states.id)
                  WHERE states.name LIKE BINARY %s"""
     curs.execute(command, (state,))
-    for city in curs.fetchall():
+    cities = curs.fetchall()
+    for city in cities:
         print(", ".join("{}".format(city[1])))
     curs.close()
     db.close()
