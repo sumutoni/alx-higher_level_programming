@@ -3,5 +3,8 @@
 
 
 def find_peak(list_of_integers):
-    list_of_integers.sort()
-    print(list_of_integers[-1])
+    if list_of_integers:
+        list_of_integers = sorted(list_of_integers)
+        return(list_of_integers[-1])
+    else:
+        return None
